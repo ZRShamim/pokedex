@@ -17,13 +17,13 @@ class GridLayout extends StatelessWidget {
         return GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 1.5,
+              childAspectRatio: 1.1,
               crossAxisSpacing: 0,
               mainAxisSpacing: 0,
             ),
             itemCount: pokemonsController.pokemonInfoList.length,
             itemBuilder: (_, i) {
-              return Grid(pokemon: pokemonsController.pokemonInfoList[i],);
+              return Grid(index: i);
             });
       }
     });

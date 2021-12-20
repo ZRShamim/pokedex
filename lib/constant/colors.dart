@@ -1,3 +1,22 @@
 import 'package:flutter/material.dart';
 
 Color white = Colors.white;
+Color grassType = const Color(0xff7AC74C);
+Color bugType = const Color(0xffA6B91A); 
+Color darkType = const Color(0xff705746); 
+Color dragonType = const Color(0xff6F35FC);
+Color electricType = const Color(0xffF7D02C);
+Color fairyType = const Color(0xffD685AD);
+Color fightingType = const Color(0xffC22E28);
+Color fireType = const Color(0xffEE8130);
+Color flyingType = const Color(0xffA98FF3);
+Color ghostType = const Color(0xff735797);
+Color groundType = const Color(0xffE2BF65);
+Color iceType = const Color(0xff96D9D6);
+Color noneType = const Color(0xffA8A77A);
+Color normalType = const Color(0xffA8A77A);
+Color poisonType = const Color(0xffA33EA1);
+Color psychicType = const Color(0xffF95587);
+Color rockType = const Color(0xffB6A136);
+Color steelType = const Color(0xffB7B7CE);
+Color waterType = const Color(0xff6390F0);

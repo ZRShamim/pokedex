@@ -1,32 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart';
 import 'package:pokedex/constant/colors.dart';
 import 'package:pokedex/view/pages/home_page/widgets/grid_layout.dart';
 
 class HomePage extends StatelessWidget {
+  var darkTheme = 0.obs;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white,
         elevation: 0,
-      ),
-      backgroundColor: white,
-      body: Column(
-        children: [
-          const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Pokedex',
-                style: TextStyle(fontSize: 30),
-              )),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            child: GridLayout()
-          ),
+        title: const Text(
+          'Pokedex',
+          style: TextStyle(fontSize: 30),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.bottomSheet(
+                  Container(
+                    height: MediaQuery.of(context).size.height * .15,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.wb_sunny_outlined),
+                          title: const Text('Light Theme'),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.wb_sunny),
+                          title: const Text('Dark Theme'),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  backgroundColor: Colors.grey);
+            },
+            icon: const Icon(Icons.settings),
+          )
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(right: 5, left: 5),
+        child: GridLayout(),
       ),
     );
   }

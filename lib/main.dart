@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pokedex/view/pages/home_page/home_page.dart';
+import 'package:pokedex/view/pages/info_page/info_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +15,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Pokedex',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => HomePage())
+        GetPage(name: '/', page: () => HomePage()),
+        GetPage(name: '/info-page', page: () => InfoPage()),
       ],
     );
   }
