@@ -51,7 +51,12 @@ class InfoPage extends StatelessWidget {
                               padding: const EdgeInsets.all(15),
                               child: Text(
                                 pokemon.name,
-                                style: const TextStyle(fontSize: 40),
+                                style: const TextStyle(
+                                  fontSize: 40,
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red
+                                ),
                               ),
                             ),
                             Padding(
@@ -92,8 +97,14 @@ class InfoPage extends StatelessWidget {
                 text: 'Evolution',
               ),
             ],
+            indicatorColor: Colors.red,
+            labelStyle: const TextStyle(
+              fontSize: 18,
+              fontFamily: 'Nunito',
+            ),
             controller: _tabs.controller,
-            labelColor: Colors.black,
+            labelColor: Colors.red,
+            unselectedLabelColor: Colors.red[100],
           ),
           Expanded(
             child: TabBarView(controller: _tabs.controller, children: [
