@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pokedex/controller/pokemons_controller.dart';
-import 'package:pokedex/model/pokemon_info.dart';
-import 'package:pokedex/view/pages/home_page/widgets/type_box.dart';
 
 class EvolutionGrid extends StatelessWidget {
   PokemonsController pokemonsController = Get.find();
@@ -22,7 +20,8 @@ class EvolutionGrid extends StatelessWidget {
               pokemon.imageurl,
               width: 100,
             ),
-            Text(pokemon.name)
+            Text(pokemon.name),
+            Container(child: Text(pokemon.reason)),
           ],
         ),
       ],

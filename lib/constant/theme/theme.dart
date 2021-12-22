@@ -8,13 +8,23 @@ class Themes {
           color: Color(0xffDF362D),
           elevation: 0,
           titleTextStyle: TextStyle(
-            fontFamily: 'RobotoCondensed',
-            fontWeight: FontWeight.bold
+            fontFamily: 'PokemonHollow',
+            fontWeight: FontWeight.bold,
+            fontSize: 28
           )
         ),
     
   );
   final darkTheme = ThemeData.dark().copyWith(
     primaryColor: Colors.blueGrey[800],
+    appBarTheme: const AppBarTheme(
+          // color: Colors.blueGrey[800],
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            fontFamily: 'PokemonHollow',
+            fontWeight: FontWeight.bold,
+            fontSize: 28
+          )
+        )
   );
 }

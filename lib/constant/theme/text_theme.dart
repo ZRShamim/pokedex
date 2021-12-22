@@ -8,12 +8,10 @@ String pokemonHollow = 'PokemonHollow';
 String nunito = 'Nunito';
 
 class CustomTextThemes {
-  TextStyle title = TextStyle(
-      color: Colors.white,
-      fontSize: 35,
-      fontFamily: pokemonHollow,
-      letterSpacing: 2);
-  TextStyle cardName = TextStyle(color: Colors.amber, fontSize: 20, fontFamily: nunito);
-  TextStyle cardId = const TextStyle(color: Colors.red, fontSize: 14);
-  TextStyle type = TextStyle(color: Colors.white70, fontSize: 12, fontFamily: nunito);
+  TextStyle cardName =
+      TextStyle(color: Colors.redAccent, fontSize: 20, fontFamily: nunito);
+  TextStyle cardId = TextStyle(color: Colors.red[200], fontSize: 14);
+  TextStyle type =
+      TextStyle(color: Colors.white70, fontSize: 12, fontFamily: nunito);
+  TextStyle stat = const TextStyle(fontSize: 20, color: Colors.grey);
 }

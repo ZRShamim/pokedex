@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pokedex/controller/pokemons_controller.dart';
 import 'package:pokedex/controller/tabs_controller.dart';
-import 'package:pokedex/model/pokemon_info.dart';
 import 'package:pokedex/view/common%20widgets/type_card.dart';
 import 'package:pokedex/view/pages/info_page/widget/about_tab.dart';
 import 'package:pokedex/view/pages/info_page/widget/base_stats_tab.dart';
-import 'package:pokedex/view/pages/info_page/widget/evolution_tab.dart';
+import 'package:pokedex/view/pages/info_page/widget/evolution_grid_layout.dart';
 
 class InfoPage extends StatelessWidget {
   PokemonsController pokemonsController = Get.find();
@@ -19,12 +18,6 @@ class InfoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Get.back();
-        //   },
-        //   icon: const Icon(Icons.arrow_back),
-        // ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,8 +66,6 @@ class InfoPage extends StatelessWidget {
                                       child: TypeCard(
                                         typeofpokemon:
                                             pokemon.typeofpokemon[i].name,
-                                        color: pokemonsController.typeColor(
-                                            pokemon.typeofpokemon[i].name),
                                       ),
                                     ),
                                 ],
@@ -108,7 +99,7 @@ class InfoPage extends StatelessWidget {
             child: TabBarView(controller: _tabs.controller, children: [
               AboutTab(pokemon: pokemon),
               BaseStatesTab(pokemon: pokemon),
-              EvolutionTab(pokemon: pokemon)
+              EvolutionGridlayout(pokemon: pokemon)
               // Center(child: Text('In Progress'),)
             ]),
           )
@@ -119,5 +110,3 @@ class InfoPage extends StatelessWidget {
     );
   }
 }
-
-

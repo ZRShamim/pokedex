@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         title: Text(
           'Pokedex',
-          style: CustomTextThemes().title
+          // style: CustomTextThemes().title
           
         ),
         actions: [
