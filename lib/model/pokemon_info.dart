@@ -6,7 +6,7 @@ import 'dart:convert';
 
 List<PokemonInfo> pokemonInfoFromJson(String str) => List<PokemonInfo>.from(json.decode(str).map((x) => PokemonInfo.fromJson(x)));
 
-String pokemonInfoToJson(List<PokemonInfo> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+// String pokemonInfoToJson(List<PokemonInfo> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class PokemonInfo {
     PokemonInfo({
@@ -58,10 +58,10 @@ class PokemonInfo {
     int specialDefense;
     int speed;
     int total;
-    MalePercentage? malePercentage;
-    MalePercentage? femalePercentage;
+    String? malePercentage;
+    String? femalePercentage;
     int genderless;
-    Cycles? cycles;
+    String? cycles;
     String eggGroups;
     String evolvedfrom;
     String reason;
@@ -87,10 +87,10 @@ class PokemonInfo {
         specialDefense: json["special_defense"],
         speed: json["speed"],
         total: json["total"],
-        malePercentage: json["male_percentage"] == null ? null : malePercentageValues.map[json["male_percentage"]],
-        femalePercentage: json["female_percentage"] == null ? null : malePercentageValues.map[json["female_percentage"]],
+        malePercentage: json["male_percentage"],
+        femalePercentage: json["female_percentage"],
         genderless: json["genderless"],
-        cycles: cyclesValues.map[json["cycles"]],
+        cycles: json["cycles"],
         eggGroups: json["egg_groups"],
         evolvedfrom: json["evolvedfrom"],
         reason: json["reason"],
@@ -117,10 +117,10 @@ class PokemonInfo {
         "special_defense": specialDefense,
         "speed": speed,
         "total": total,
-        "male_percentage": malePercentageValues.reverse[malePercentage],
-        "female_percentage": malePercentageValues.reverse[femalePercentage],
+        "male_percentage": malePercentage,
+        "female_percentage": femalePercentage,
         "genderless": genderless,
-        "cycles": cyclesValues.reverse[cycles],
+        "cycles": cycles,
         "egg_groups": eggGroups,
         "evolvedfrom": evolvedfrom,
         "reason": reason,
@@ -128,34 +128,6 @@ class PokemonInfo {
     };
 }
 
-enum Cycles { THE_20, THE_15, THE_10, THE_25, THE_40, THE_5, THE_35, THE_30, THE_80, THE_120, THE_19, EMPTY }
-
-final cyclesValues = EnumValues({
-    "-": Cycles.EMPTY,
-    "10 ": Cycles.THE_10,
-    "120 ": Cycles.THE_120,
-    "15 ": Cycles.THE_15,
-    "19 ": Cycles.THE_19,
-    "20 ": Cycles.THE_20,
-    "25 ": Cycles.THE_25,
-    "30 ": Cycles.THE_30,
-    "35 ": Cycles.THE_35,
-    "40 ": Cycles.THE_40,
-    "5 ": Cycles.THE_5,
-    "80 ": Cycles.THE_80
-});
-
-enum MalePercentage { THE_875, THE_50, THE_0, THE_100, THE_25, THE_75, THE_125 }
-
-final malePercentageValues = EnumValues({
-    "0%": MalePercentage.THE_0,
-    "100%": MalePercentage.THE_100,
-    "12.5%": MalePercentage.THE_125,
-    "25%": MalePercentage.THE_25,
-    "50%": MalePercentage.THE_50,
-    "75%": MalePercentage.THE_75,
-    "87.5%": MalePercentage.THE_875
-});
 
 enum Typeofpokemon { GRASS, POISON, FIRE, FLYING, WATER, BUG, NORMAL, ELECTRIC, GROUND, FAIRY, FIGHTING, PSYCHIC, ROCK, STEEL, ICE, GHOST, DRAGON, DARK, NONE }
 

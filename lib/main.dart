@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:pokedex/view/pages/home_page/home_page.dart';
 import 'package:pokedex/view/pages/info_page/info_page.dart';
 
+import 'constant/theme/theme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Pokedex',
       debugShowCheckedModeBanner: false,
+      theme: Themes().lightTheme,
+      darkTheme: Themes().darkTheme,
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => HomePage()),

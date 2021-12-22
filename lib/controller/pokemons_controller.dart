@@ -7,6 +7,12 @@ import 'package:pokedex/model/pokemon_info.dart';
 class PokemonsController extends GetxController {
   var isLoading = true.obs;
   var pokemonInfoList = <PokemonInfo>[].obs;
+  var tabIndex = 0;
+
+  // void changeTabIndex(index) {
+  //   tabIndex = index;
+  //   update();
+  // }
 
   @override
   void onInit() {
@@ -26,63 +32,48 @@ class PokemonsController extends GetxController {
     }
   }
 
+  int findPokemonId(String id) {
+    return pokemonInfoList.indexWhere((pokemon) => pokemon.id == id);
+  }
+
   Color typeColor(String type) {
-    
     if (type.toLowerCase() == 'grass') {
       return grassType;
-    }
-    else if(type.toLowerCase() == 'bug'){
+    } else if (type.toLowerCase() == 'bug') {
       return bugType;
-    }
-    else if(type.toLowerCase() == 'dark'){
+    } else if (type.toLowerCase() == 'dark') {
       return darkType;
-    }
-    else if(type.toLowerCase() == 'dragon'){
+    } else if (type.toLowerCase() == 'dragon') {
       return dragonType;
-    }
-    else if(type.toLowerCase() == 'electric'){
+    } else if (type.toLowerCase() == 'electric') {
       return electricType;
-    }
-    else if(type.toLowerCase() == 'fairy'){
+    } else if (type.toLowerCase() == 'fairy') {
       return fairyType;
-    }
-    else if(type.toLowerCase() == 'fighting'){
+    } else if (type.toLowerCase() == 'fighting') {
       return fightingType;
-    }
-    else if(type.toLowerCase() == 'fire'){
+    } else if (type.toLowerCase() == 'fire') {
       return fireType;
-    }
-    else if(type.toLowerCase() == 'flying'){
+    } else if (type.toLowerCase() == 'flying') {
       return flyingType;
-    }
-    else if(type.toLowerCase() == 'ghost'){
+    } else if (type.toLowerCase() == 'ghost') {
       return ghostType;
-    }
-    else if(type.toLowerCase() == 'ground'){
+    } else if (type.toLowerCase() == 'ground') {
       return groundType;
-    }
-    else if(type.toLowerCase() == 'ice'){
+    } else if (type.toLowerCase() == 'ice') {
       return iceType;
-    }
-    else if(type.toLowerCase() == 'normal'){
+    } else if (type.toLowerCase() == 'normal') {
       return normalType;
-    }
-    else if(type.toLowerCase() == 'poison'){
+    } else if (type.toLowerCase() == 'poison') {
       return poisonType;
-    }
-    else if(type.toLowerCase() == 'psychic'){
+    } else if (type.toLowerCase() == 'psychic') {
       return psychicType;
-    }
-    else if(type.toLowerCase() == 'rock'){
+    } else if (type.toLowerCase() == 'rock') {
       return rockType;
-    }
-    else if(type.toLowerCase() == 'steel'){
+    } else if (type.toLowerCase() == 'steel') {
       return steelType;
-    }
-    else if(type.toLowerCase() == 'water'){
+    } else if (type.toLowerCase() == 'water') {
       return waterType;
-    }
-    else{
+    } else {
       return noneType;
     }
   }

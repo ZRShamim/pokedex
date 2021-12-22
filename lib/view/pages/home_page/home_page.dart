@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:pokedex/constant/colors.dart';
+import 'package:pokedex/constant/theme/text_theme.dart';
+import 'package:pokedex/constant/theme/theme.dart';
 import 'package:pokedex/view/pages/home_page/widgets/grid_layout.dart';
 
 class HomePage extends StatelessWidget {
   var darkTheme = 0.obs;
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-
+    // var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Pokedex',
-          style: TextStyle(fontSize: 30),
+          style: CustomTextThemes().title
+          
         ),
         actions: [
           IconButton(
@@ -29,14 +31,14 @@ class HomePage extends StatelessWidget {
                           leading: const Icon(Icons.wb_sunny_outlined),
                           title: const Text('Light Theme'),
                           onTap: () {
-                            Get.changeTheme(ThemeData.light());
+                            Get.changeTheme(Themes().lightTheme);
                           },
                         ),
                         ListTile(
                           leading: const Icon(Icons.wb_sunny),
                           title: const Text('Dark Theme'),
                           onTap: () {
-                            Get.changeTheme(ThemeData.dark());
+                            Get.changeTheme(Themes().darkTheme);
                           },
                         ),
                       ],

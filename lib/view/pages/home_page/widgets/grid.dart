@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pokedex/constant/theme/text_theme.dart';
 import 'package:pokedex/controller/pokemons_controller.dart';
+import 'package:pokedex/view/common widgets/type_card.dart';
 import 'package:pokedex/view/pages/home_page/widgets/type_box.dart';
 
 class Grid extends StatelessWidget {
@@ -36,15 +38,22 @@ class Grid extends StatelessWidget {
                 left: 20,
                 child: SizedBox(
                   width: 120,
-                  child: Text(
-                    pokemon.name,
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
+                  child: Text(pokemon.name, style: CustomTextThemes().cardName),
                 )),
             TypeBox(index: index),
-            Positioned(top: 30, right: 20, child: Text(pokemon.id)),
+            
+            // for (var i = 0; i < pokemon.typeofpokemon.length; i++)
+            //   TypeCard(
+            //       typeofpokemon: pokemon.typeofpokemon[i].name,
+            //       color: pokemonController
+            //           .typeColor(pokemon.typeofpokemon[i].name)),
+            Positioned(
+                top: 30,
+                right: 20,
+                child: Text(
+                  pokemon.id,
+                  style: CustomTextThemes().cardId,
+                )),
           ],
         ),
       ),

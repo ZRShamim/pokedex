@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pokedex/constant/theme/text_theme.dart';
 import 'package:pokedex/controller/pokemons_controller.dart';
 
 class TypeBox extends StatelessWidget {
@@ -31,10 +32,7 @@ class TypeBox extends StatelessWidget {
                         .typeColor(pokemon.typeofpokemon[i].name),
                     child: Text(
                       pokemon.typeofpokemon[i].name,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
+                      style: CustomTextThemes().type,
                     )),
               ),
             )
