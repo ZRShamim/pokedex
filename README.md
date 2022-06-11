@@ -1,7 +1,7 @@
 # pokedex - know pokemons
 
 <p>
-  know about 809 types of pokemon.
+  know about 809 types of pokemon through this Flutter app.
 </p>
 
 
